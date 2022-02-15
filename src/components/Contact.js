@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = (props) => {
   return (
-    <div>
+    <div className='container'>
       <div className={`text-center text-${props.mode==='light'?'dark':'light'}`}>
           <h2 className={` text-${props.mode==='light'?'dark':'light'}`}>Contact us</h2>
       </div>

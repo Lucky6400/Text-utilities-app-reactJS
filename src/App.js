@@ -4,7 +4,7 @@ import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 import About from './components/About';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Contact from './components/Contact';
 
 function App() {
@@ -35,11 +35,11 @@ function App() {
   return (
     <>
    <Router>
-    <div className={`container-fluid bg-${mode}`}>
+    <div style={{height:'100vh'}} className={`container-fluid bg-${mode}`}>
     <Navbar mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert}  />
     <Routes>
-    <Route path='/' element={<TextForm/>} />
+    <Route path='/' element={<TextForm alert={showAlert} mode={mode}/>} />
     <Route path='/about' element={<About mode={mode}/>} />
     <Route path='/contact' element={<Contact mode={mode}/>} />
     </Routes>

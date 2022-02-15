@@ -6,19 +6,19 @@ export default function TextForm(props) {
     console.log("Uppercase conversion button was clicked");
     let newText = text.toUpperCase();
     setText(newText); // by this we are able to convert the text to uppercase
-    props.olert("Converted to UpperCase", "primary")
+    props.alert("Converted to UpperCase", "primary")
   }
   const lowerClick = () => {
     console.log("Lowercase conversion button was clicked");
     let newText = text.toLowerCase();
     setText(newText); // by this we are able to convert the text to lowercase
-    props.olert("Converted to Lowercase", "info")
+    props.alert("Converted to Lowercase", "info")
   }
   const replaceClick = () => {
     console.log("Text was cleared");
     let newText = text.replace(text, ""); // first: item to be replaced, second: replace item with.
     setText(newText); 
-    props.olert("Cleared text", "dark")
+    props.alert("Cleared text", "dark")
   }
 
 
@@ -51,9 +51,9 @@ export default function TextForm(props) {
             
 
           </div>
-          <h2 className={`text-${props.mode === 'light' ? 'dark' : 'light'} col-lg-4 text-center mt-2`}>Your input info:</h2>
-          <p className={`bg-light rounded-pill col-lg-4 text-center`}>{text.split(" ").length} words and {text.length} characters</p>
-          <p className={`bg-light rounded-pill col-lg-4 text-center`}>{0.008 * text.split(" ").length} minutes taken to read.</p>
+          <h2 className={`text-${props.mode==='light'?'dark':'light'} col-lg-4 text-center mt-2`}>Your input info:</h2>
+          <p className={`bg-light rounded-pill col-lg-4 text-center`}>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+          <p className={`bg-light rounded-pill col-lg-4 text-center`}>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes taken to read.</p>
           
         </div>
       </div>
